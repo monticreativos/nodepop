@@ -1,3 +1,8 @@
+/* 
+    Creado por: David Montalba Gonzalez
+    BootCamp Web Full Stack - KeepCondig XII
+*/
+
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 

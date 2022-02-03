@@ -1,3 +1,8 @@
+/* 
+    Creado por: David Montalba Gonzalez
+    BootCamp Web Full Stack - KeepCondig XII
+*/
+
 const urlAnunciosGet = 'http://localhost:8080/api/anuncios';
 let urlAnunciosImagenGet = 'http://localhost:8080/api/uploads/anuncios/';
 let urlAnunciosId = 'http://localhost:8080/api/anuncios/';

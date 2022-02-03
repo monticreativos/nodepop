@@ -1,3 +1,8 @@
+/* 
+    Creado por: David Montalba Gonzalez
+    BootCamp Web Full Stack - KeepCondig XII
+*/
+
 const divMostrarAnuncios = document.getElementById('mostrarAnuncios');
 const urlAnunciosGet = 'http://localhost:8080/api/anuncios';
 

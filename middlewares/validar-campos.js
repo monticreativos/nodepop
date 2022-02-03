@@ -1,3 +1,8 @@
+/* 
+    Creado por: David Montalba Gonzalez
+    BootCamp Web Full Stack - KeepCondig XII
+*/
+
 const { validationResult } = require('express-validator');
 
 

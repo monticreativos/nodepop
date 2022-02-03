@@ -1,3 +1,8 @@
+/* 
+    Creado por: David Montalba Gonzalez
+    BootCamp Web Full Stack - KeepCondig XII
+*/
+
 const { response } = require('express');
 const { ObjectId } = require('mongoose').Types;
 
@@ -55,7 +60,6 @@ const buscar = ( req, res = response ) => {
                 msg: 'Se le olvido hacer esta búsquda'
             })
     }
-
 };
 
 

@@ -1,3 +1,8 @@
+/* 
+    Creado por: David Montalba Gonzalez
+    BootCamp Web Full Stack - KeepCondig XII
+*/
+
 import { actualizarImagen, crearAnunciosHtml, editarAnuncio } from './anuncios.js';
 import { obtenerAnunciosFiltrados } from './buscar.js';
 import * as CRUD from './crud.js'

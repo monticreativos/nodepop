@@ -1,3 +1,8 @@
+/* 
+    Creado por: David Montalba Gonzalez
+    BootCamp Web Full Stack - KeepCondig XII
+*/
+
 import { obtenerAnuncios, obtenerImagenAnuncio } from './http-providers.js';
 import * as CRUD from './crud.js'
 
