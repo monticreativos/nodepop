@@ -48,6 +48,7 @@ const anunciosGet = async(req = request, res = response) => {
             .sort({ precio: order })
     ]);
 
+    // Retornamos los anuncios con el numero total en un JSON
     res.json({
         total,
         anuncios
@@ -56,14 +57,10 @@ const anunciosGet = async(req = request, res = response) => {
 
 const anunciosPost = async (req, res = response) => {
 
-    const { nombre, venta, precio, foto, tags } = req.body;
-    // console.log(req.foto);
-    
+    // Desestructuramos los parametros que vienen en la Request
+    const { nombre, venta, precio, foto, tags } = req.body;   
 
-    // let EDFile = req.files.file
-
-    
-
+    // Creamos el modelo anuncio para añadir al DB
     const anuncio = new Anuncio( {
         nombre,
         venta,
@@ -72,21 +69,8 @@ const anunciosPost = async (req, res = response) => {
         tags
     } );
 
-    // Verificar si el nombre existe
-    // const existeAnuncio = await Anuncio.findOne({ nombre });
-
-    // if ( existeAnuncio ) {
-    //     return res.status(400).json({
-    //         msg: 'Ese anuncio ya esta registrado'
-    //     });
-    // };
-
-    // Guardar en BD
+    // Guardamos el nuevo anuncio
     await anuncio.save();
-
-    // EDFile.mv(`./public/assets/uploads/${EDFile.name}`,err => {
-    //     if(err) return res.status(500).send({ message : err })
-    // });
 
     res.json({
         anuncio
@@ -94,15 +78,11 @@ const anunciosPost = async (req, res = response) => {
 }
 
 const anunciosPut = async(req, res = response) => {
-
+    
+    // Desestructuramos la ID que viene en la Request
     const { id } = req.params;
+    // Creamos la variable data para guardar lo que viene en el la request.boby
     const data = req.body;
-
-    // const existeAnuncio = await Anuncio.findById(id);
-    // if ( !existeAnuncio ) {
-    //     throw new Error(`El ${id} no pertenece a ningun anuncio`);
-    // }
-
     const anuncio = await Anuncio.findByIdAndUpdate(id, data);
 
     res.json({
@@ -120,12 +100,6 @@ const anunciosPatch = (req, res = response) => {
 const anunciosDelete = async(req, res = response) => {
     
     const { id } = req.params;
-    
-    // const existeAnuncio = await Anuncio.findById(id);
-    // if ( !existeAnuncio ) {
-    //     throw new Error(`El ${id} no pertenece a ningun anuncio`);
-    // }
-
     const anuncioBorrado = await Anuncio.findByIdAndDelete( id );
 
     res.json( anuncioBorrado );

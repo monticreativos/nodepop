@@ -14,15 +14,13 @@ const buscarProductos = async( termino = '', res = response ) => {
     if ( esMongoID ) {
         
         const producto = await Producto.findById(termino);
-
         return res.json({
             results: ( producto ) ? [ producto ] : []
         });
     }
 
     const regex = new RegExp( termino, 'i' );
-    const productos = await Producto.find({ nombre: regex, estado: true })
-                            .populate('categoria','nombre')
+    const productos = await Anuncio.find({ nombre: regex, estado: true });
 
     res.json({
         results: productos
@@ -58,7 +56,7 @@ const buscar = ( req, res = response ) => {
             })
     }
 
-}
+};
 
 
 
