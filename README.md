@@ -32,7 +32,7 @@ npm run start
 
 ## Rutas de la Web
 
-* http://localhost:3000/
+* http://localhost:8080/
 
 Home, muestra todos los anuncios, a esta URL podremos aplicar filtros y paginación para conseguir distintas listas.
 
