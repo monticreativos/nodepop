@@ -37,6 +37,7 @@ export const crearAnunciosHtml = async( anuncio ) => {
     </div>
     `;
 
+    
     const divAnuncios = document.createElement('div');
     divAnuncios.classList.add('d-inline-block');
     divAnuncios.classList.add('m-2');
