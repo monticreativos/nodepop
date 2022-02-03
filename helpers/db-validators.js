@@ -1,8 +1,6 @@
 const  Anuncio = require('../models/anuncio');
 
-
 const existeAnuncioPorId = async( id ) => {
-    
     const existeAnuncio = await Anuncio.findById(id);
     if ( !existeAnuncio ) {
         throw new Error(`El ${id} no pertenece a ningun anuncio`);
@@ -18,7 +16,6 @@ const coleccionesPermitidas = async(coleccion = '', colecciones = []) =>{
     }
 
     return true;
-
 }
 
 
