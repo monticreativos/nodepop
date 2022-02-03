@@ -2,6 +2,14 @@
 
 ## Para inicializar el proyecto:
 
+Configurar la variables de entorno en el archivo .example.env
+```shell
+PORT=8080
+MONGODB_CNN=
+```
+
+Luego, copiar el .example.env archivar en un nuevo .env archivo y complete los valores.
+
 ```shell
 npm install
 ```
