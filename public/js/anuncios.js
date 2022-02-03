@@ -5,9 +5,10 @@ const contenedor = document.querySelector('#contenedor');
 let correlativo = 0;
 
 export const crearAnunciosHtml = async( anuncio ) => {
-// console.log(anuncio);
+
+    // Obtenemos la imgen del anuncio con una peticion
     const imgPath = await obtenerImagenAnuncio(anuncio);
-    // console.log(imgPath);
+
     let estado;
     if ( anuncio.venta === true ) {
         estado = 'Venta'
@@ -15,7 +16,8 @@ export const crearAnunciosHtml = async( anuncio ) => {
         estado = 'Buscando'
     }
     correlativo++;
-    // console.log(anuncio._id);
+
+    // Template
     const html = `
     <div class="card animate__delay-1s animate__animated animate__bounce animate__fadeIn" style="width: 400px;">
         <img src="${imgPath}" class="card-img-top" alt="...">
@@ -29,10 +31,10 @@ export const crearAnunciosHtml = async( anuncio ) => {
         </div>
     </div>
     `;
+
     const divAnuncios = document.createElement('div');
     divAnuncios.classList.add('d-inline-block');
     divAnuncios.classList.add('m-2');
-    // divAnuncios.id='contenedor';
 
     divAnuncios.innerHTML = html;
     contenedor.append(divAnuncios);
@@ -41,20 +43,19 @@ export const crearAnunciosHtml = async( anuncio ) => {
 export const editarAnuncio = async( id ) => {
     
     contenedor.innerHTML = '';
-    
-    
+     
     const anuncio = await CRUD.getAnuncio(id);
     console.log(anuncio);
 
     const imgPath = await obtenerImagenAnuncio(anuncio);
-    // console.log(imgPath);
+
     let estado;
     if ( anuncio.venta === true ) {
         estado = 'Venta'
     }else{
         estado = 'Buscando'
     }
-    // correlativo++;
+
     console.log(imgPath);
 
     const html = `
@@ -88,6 +89,7 @@ export const editarAnuncio = async( id ) => {
                 </div>
 
     `;
+
     const divAnuncios = document.createElement('div');
     divAnuncios.classList.add('d-inline-block');
     divAnuncios.classList.add('w-100');
@@ -101,19 +103,18 @@ export const editarAnuncio = async( id ) => {
 export const actualizarImagen = async( id ) => {
 
     contenedor.innerHTML = '';
-    
     const anuncio = await CRUD.getAnuncio(id);
     console.log(anuncio);
 
     const imgPath = await obtenerImagenAnuncio(anuncio);
-    // console.log(imgPath);
+
     let estado;
     if ( anuncio.venta === true ) {
         estado = 'Venta'
     }else{
         estado = 'Buscando'
     }
-    // correlativo++;
+
     console.log(imgPath);
 
     const html = `
@@ -143,7 +144,5 @@ export const actualizarImagen = async( id ) => {
 export const init = async() => {
     const data = await obtenerAnuncios();
     data.anuncios.forEach(crearAnunciosHtml);
-    // editarAnuncio('61f6893233c1000628c0cb82');
-    // await eventos();
 };
 

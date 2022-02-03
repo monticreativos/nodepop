@@ -40,17 +40,6 @@ const obtenerAnuncioPorId = async( id ) => {
         throw error;
     }
 };
-// const obtenerAnunciosFiltrados = async() => {
-
-//     try {
-//         const resp = await fetch( urlAnunciosGet );
-//         const data = await resp.json();
-//         return data;
-
-//     } catch (error) {
-//         throw error;
-//     }
-// };
 
 
 export {

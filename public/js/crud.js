@@ -31,9 +31,6 @@ console.log(FormData);
     const resp = await fetch(`${urlImageCRUD}/${id}`, {
         method: 'PUT',
         body: FormData,
-        // headers: {
-        //     'Content-Type': 'multipart/form-data'
-        // }
     });
     const data = await resp.json();
 
@@ -78,12 +75,7 @@ const filtrarAnuncios = async (filtros) => {
         });
 
    }
-    // console.log(filtrar);
     
-    // console.log(url);
-    
-
-
     try {
         const resp = await fetch( `${url}` );
         const data = await resp.json();
@@ -93,10 +85,6 @@ const filtrarAnuncios = async (filtros) => {
         throw error;
     }
 
-    // const resp = await fetch(`${urlCRUD}/`);
-    // const data = await resp.json();
-
-    // return data;
 }
 
 
@@ -115,7 +103,6 @@ const crearAnuncio = async ( dataBody ) => {
             status,
             ...data
         }
-        // data.anuncios = resp;
         return response;
     }
 

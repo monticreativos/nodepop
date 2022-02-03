@@ -222,10 +222,6 @@ export const eventos = (event) => {
 
                 }
 
-
-                // Habria que implementar validacion a los datos que recibimos
-
-                //
                 const data = {
                     nombre: nombreAnuncio.value,
                     precio: Number(precioAnuncio.value),

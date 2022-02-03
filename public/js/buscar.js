@@ -1,6 +1,5 @@
 import { obtenerAnuncios, obtenerImagenAnuncio } from './http-providers.js';
 import * as CRUD from './crud.js'
-// import { crearAnunciosHtml } from './anuncios.js';
 
 let correlativo = 0;
 const contenedor = document.querySelector('#anunciosFiltro');
@@ -8,8 +7,6 @@ const contenedors = document.querySelector('#contenedor');
 
 
 const crearAnunciosHtmls = async( anuncio ) => {
-
-        // console.log(anuncio);
 
         const imgPath = await obtenerImagenAnuncio(anuncio);
 
