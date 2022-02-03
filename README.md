@@ -61,5 +61,16 @@ Con DELETE podremos eliminar un anuncio, introduciendo su ID al final de la ruta
 
 Busca entre todos los anuncios y devuelve una lista de todos los tags utilizados.
 
+## Subida de Imagenes
+
+* http://localhost:8080/api/uploads:id
+
+Para la subida de una imagen del anuncio. La imagen se enviara por form-data con el parametro 'archivo'
+
+Obtenemos la imagen de una anuncio por metodo GET
+* http://localhost:8080/api/uploads/anuncios/:id
+
+Busca entre todos los anuncios y devuelve la imagen segun el ID del anuncio
+
 
 
