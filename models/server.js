@@ -17,7 +17,9 @@ class Server {
         this.port = process.env.PORT;
         this.paths = {
             anuncios: '/api/anuncios',
-            uploads: '/api/uploads'
+            uploads: '/api/uploads',
+            home: '/'
+
         };
 
         //Conectar a base de datos para
@@ -57,6 +59,8 @@ class Server {
     routes() {
         this.app.use( this.paths.anuncios, require('../routes/anuncios'));
         this.app.use( this.paths.uploads, require('../routes/uploads'));
+        this.app.use( this.paths.uploads, require('../routes/home'));
+
 
     }
 
