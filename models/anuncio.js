@@ -2,7 +2,7 @@
     Creado por: David Montalba Gonzalez
     BootCamp Web Full Stack - KeepCondig XII
 */
-// 'use strict';
+'use strict';
 
 // Importaciones (dependencias)
 const { Schema, model } = require('mongoose');
@@ -34,17 +34,6 @@ const AnuncioSchema = Schema({
     },
 
 });
-
-// Creamos un método estático
-// AnuncioSchema.statics.lista = function(filtros, skip, limit, select, sort, Anuncio) {
-//     console.log(filtros);
-//     const query = Anuncio.find(filtros);
-//     query.skip(skip);
-//     query.limit(limit);
-//     query.select(select);
-//     query.sort(sort);
-//     return query.exec();
-// };
 
 AnuncioSchema.methods.toJSON = function() {
     const { __v, ...data  } = this.toObject();
